@@ -9,14 +9,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './pages/home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  { path: 'forest', loadChildren: './pages/forest/forest/forest.module#ForestPageModule' },
-  { path: 'ocean', loadChildren: './pages/ocean/ocean/ocean.module#OceanPageModule' }
+  { path: 'forest', loadChildren: './pages/forest/forest.module#ForestPageModule' },
+  { path: 'ocean', loadChildren: './pages/ocean/ocean.module#OceanPageModule' }
 ];
 
 @NgModule({
