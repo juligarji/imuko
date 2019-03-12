@@ -16,9 +16,10 @@ describe('NotificationService', () => {
   it('simple alert should be created', () => {
     const service: NotificationService = TestBed.get(NotificationService);
 
-    let alert = service.alert('Test title','Test subtitle','test message')
-
-    expect(alert).toBeDefined()
+    let alert  = service.alert('Test title','Test subtitle','test message')
+        .then(ale=>{
+          expect(ale).toBeDefined()
+        })
   });
 
   it('loader should be created and contain the right message', () => {
