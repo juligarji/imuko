@@ -20,6 +20,16 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Forest',
+      url: '/forest',
+      icon: 'leaf'
+    },
+    {
+      title: 'Ocean',
+      url: '/ocean',
+      icon: 'water'
     }
   ];
 
