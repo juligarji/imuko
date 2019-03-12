@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 /* ........................................... */
 import { ServicesModule } from '../app/services/services.module'
+import { HttpClientModule } from '@angular/common/http'
 /* ........................................... */
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ServicesModule } from '../app/services/services.module'
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ServicesModule
+    ServicesModule,
+    HttpClientModule,
   ],
   providers: [
     StatusBar,
