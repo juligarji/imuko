@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 /* ........................................... */
 import { ServicesModule } from '../app/services/services.module'
 import { HttpClientModule } from '@angular/common/http'
+import { ErrorService } from '../app/services/error/error.service'
 /* ........................................... */
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http'
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: ErrorHandler, useClass: ErrorService}  
   ],
   bootstrap: [AppComponent]
 })
