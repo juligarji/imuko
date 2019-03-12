@@ -1,5 +1,7 @@
 {
   "name": "imuko",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
