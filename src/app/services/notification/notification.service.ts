@@ -8,6 +8,11 @@ import { AlertController, LoadingController, ToastController } from '@ionic/angu
   providedIn: 'root'
 })
 
+// ............. SERVICE DESCRIPTION ...................
+//  This service shows different types of informative messages on the
+// user's screen
+// .....................................................
+
 export class NotificationService {
   private loaderDuration:number = 10000
   private loaderMessage:string = "Please wait ..."
@@ -16,6 +21,7 @@ export class NotificationService {
   constructor(private alertCtrl:AlertController, private loadingCtrl:LoadingController, private toastCtrl:ToastController) { }
 
   async alert(title:string = 'Information',subTitle:string,message:string){
+    // Shows a simple alert in the foreground
     let alert = await this.alertCtrl.create({
       header: title,
       subHeader: subTitle,
@@ -28,6 +34,7 @@ export class NotificationService {
   async showLoader(){
     if(!this.loader)
     {
+      // Shows a message for loading times in the foreground
       this.loader = await this.loadingCtrl.create({
         message: this.loaderMessage,
         duration: this.loaderDuration,
@@ -38,6 +45,7 @@ export class NotificationService {
   }
 
   async hideLoader(){
+    // If a loader was created, this hides it
     if(this.loader)
     {
       await this.loader.dismiss()
@@ -46,6 +54,7 @@ export class NotificationService {
   }
 
   async showToast(message:string){
+    // Shows a toast message if the app is running on a mobile device
     if(isMobile())
     {
       let toast = await this.toastCtrl.create({
