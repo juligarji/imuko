@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>forest</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title text-center class='headers'>Wayfarer</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div id='text-container'>
+    <h1 text-center class='titles'>{{ this.data.title }}</h1>
+    <p text-center class='bodies'>{{ this.data.body }}</p>
+    <p text-center class='actions' (click)="exploreAction()">Explore</p>
+  </div>
+  
 </ion-content>

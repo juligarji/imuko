@@ -74,4 +74,27 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
 }
+
+  // Font definition
+  @font-face {
+    font-family: 'Lato-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../assets//fonts/Lato-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Abril-Fatface';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets//fonts/AbrilFatface-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Lato-Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/Lato-Bold.ttf');
+  }
