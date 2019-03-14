@@ -1,6 +1,7 @@
 import { Injectable, ErrorHandler } from '@angular/core';
 import { NotificationService } from '../notification/notification.service'
 import { HttpErrorResponse } from '@angular/common/http';
+import { ApiService } from '../info/api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 // .....................................................
 
 export class ErrorService implements ErrorHandler{
-  constructor(private notificationServ:NotificationService) { }
+  constructor(private notificationServ:NotificationService, private api:ApiService) { }
 
   handleError(error) {
     // implemented function that recives the apps errors and handles it. 
@@ -22,6 +23,7 @@ export class ErrorService implements ErrorHandler{
   private http(error:any){
       // handles the errors that occurred in the http communication
       this.notificationServ.alert('Opps an communication error has occurred','',error.message)
+      this.api.SEMAPHORE = true
       throw error
   }
 

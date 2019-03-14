@@ -13,6 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from '../app/services/services.module'
 import { HttpClientModule } from '@angular/common/http'
 import { ErrorService } from '../app/services/error/error.service'
+import { AngularFireModule } from 'angularfire2';
+import { firebaseData } from '../app/credentials';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 /* ........................................... */
 
 @NgModule({
@@ -23,13 +27,16 @@ import { ErrorService } from '../app/services/error/error.service'
     IonicModule.forRoot(),
     AppRoutingModule,
     ServicesModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseData),
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {provide: ErrorHandler, useClass: ErrorService}  
+    {provide: ErrorHandler, useClass: ErrorService}, 
+    ScreenOrientation  
   ],
   bootstrap: [AppComponent]
 })

@@ -9,9 +9,9 @@
 
 <ion-content padding>
   <div id='text-container'>
-    <h1 text-center class='titles'>{{ this.data.title }}</h1>
-    <p text-center class='bodies'>{{ this.data.body }}</p>
-    <p text-center class='actions' (click)="exploreAction()">Explore</p>
+    <h1 text-center *ngIf="this.apiServ.OBJECTS[1]" class='titles'>{{ this.apiServ.OBJECTS[1].title }}</h1>
+    <p text-center *ngIf="this.apiServ.OBJECTS[1]" class='bodies'>{{ this.apiServ.OBJECTS[1].title }}</p>
+    <p *ngIf="this.apiServ.SEMAPHORE" text-center class='actions' (click)="exploreAction()">Explore</p>
   </div>
   
 </ion-content>
