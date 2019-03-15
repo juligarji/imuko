@@ -1,4 +1,52 @@
+ion-content{
+  --background: rgb(255,255,255) url('../../../assets/backgrounds/background-pattern.jpg') no-repeat center center / cover;
+}
+
+.home-containers{
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
+.home-containers h2{
+  font-family: 'Abril-Fatface';
+  color:rgba(0,0,0,0.7);
+}
+.welcome-card{
+  filter: saturate(120%);
+}
+
 .welcome-card ion-img {
   max-height: 35vh;
   overflow: hidden;
+  border-bottom: solid rgba(0,0,0,0.3) 1px;
 }
+
+.title{
+  font-family: 'Abril-Fatface';
+  font-size:40px;
+}
+
+.subtitle{
+  font-family: 'Lato-Bold';
+  color:rgb(60,60,60);
+  font-size:25px;
+}
+.title-message-containers{
+    box-shadow: 2px 2px black 5px;
+}
+.list-container{
+  background: rgba(255,255,255,0.8);
+}
+ion-chip{
+  white-space: nowrap;
+  box-shadow: 2px 2px 5px rgb(20,20,20);
+  background-color: rgba(255,255,255,0.8);
+  font-family:'Lato-Bold';
+  font-size:17px;
+  display: inline-block;
+}
+
+ion-chip ion-icon{
+  right:0;
+}
+
+

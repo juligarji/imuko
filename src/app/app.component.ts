@@ -7,6 +7,8 @@ import { Network } from '@ionic-native/network/ngx';
 import { ApiService } from './services/info/api.service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { isMobile } from '../app/services/is-mobile.function'
+import { PushService } from '../app/services/info/push.service'
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -26,12 +28,12 @@ export class AppComponent {
     {
       title: 'Forest',
       url: '/forest',
-      icon: 'leaf'
+      icon: 'rose'
     },
     {
       title: 'Ocean',
       url: '/ocean',
-      icon: 'water'
+      icon: 'rainy'
     }
   ];
 
@@ -41,7 +43,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private network:Network,
     private apiServ:ApiService,
-    private screenOrientation: ScreenOrientation
+    private screenOrientation: ScreenOrientation,
+    private pushServ:PushService
   ) {
     this.initializeApp();
   }
@@ -57,6 +60,8 @@ export class AppComponent {
       
       // ............. CUSTOM FUNCTIONS .............
       this.apiServ.init()
+      this.pushServ.init()
+      this.pushServ.initPush()
     });
   }
 }

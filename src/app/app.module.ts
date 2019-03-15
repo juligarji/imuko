@@ -17,6 +17,9 @@ import { AngularFireModule } from 'angularfire2';
 import { firebaseData } from '../app/credentials';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { ActionCableService } from 'angular2-actioncable';
+import { Push } from '@ionic-native/push/ngx';
+import { Device } from '@ionic-native/device/ngx';
 /* ........................................... */
 
 @NgModule({
@@ -36,7 +39,10 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {provide: ErrorHandler, useClass: ErrorService}, 
-    ScreenOrientation  
+    ScreenOrientation,
+    ActionCableService,
+    Push,
+    Device
   ],
   bootstrap: [AppComponent]
 })

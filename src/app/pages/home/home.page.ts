@@ -1,37 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConnectorService } from 'src/app/services/connector/connector.service';
+import { Events } from '@ionic/angular';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
+
+  ngOnInit(): void {
+      this.events.subscribe('message',(mess)=>{
+        this.messages.push(mess)
+      })
+  }
 
   private messages =  [{
-    body: 'Hi !!, i am a message'
+    body: 'Hi !!, I am a message'
   },
   {
-    body: 'Hi !!, i am a message'
+    body: 'hi'
   },
   {
-    body: 'Hi !!, i am a message'
-  },
-  {
-    body: 'Hi !!, i am a message'
-  },
-  {
-    body: 'Hi !!, i am a message'
-  },
-  {
-    body: 'Hi !!, i am a message'
-  },
-  {
-    body: 'Hi !!, i am a message'
+    body: 'message'
   }]
 
-  constructor(private connectorServ:ConnectorService){
+  constructor(private connectorServ:ConnectorService, private events:Events){
       
   }
+
+  
 
 
 }
